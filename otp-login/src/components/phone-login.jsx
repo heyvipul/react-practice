@@ -1,5 +1,6 @@
 import { useState } from "react"
 import OtpInput from "./otp-input";
+import toast, { Toaster } from 'react-hot-toast';
 
 const PhoneOptForm = () => {
 
@@ -25,22 +26,22 @@ const PhoneOptForm = () => {
         setShowOtp(true);
     }
 
-    function onOtpSubmit(otp){
-        console.log(`login successful! with ${otp}`);
+    function onOtpSubmit(){
+        toast.success('Login successfull!')
     }
 
     return (
         <div>
             {!showOtp ? <form onSubmit={handleSubmit}>
-                <input type="text" value={phoneNumber}
+                <input className="inputNumber" type="text" value={phoneNumber}
                     onChange={handlePhoneNumber}
                     placeholder="enter phone number"
                 />
-                <button type="submit">Submit</button>
+                <button className="inputNumber" type="submit">Submit</button>
             </form> : <div>
                 <p>Enter the otp sent to {phoneNumber}</p>
                 <OtpInput length={4} onOtpSubmit={onOtpSubmit} />
-
+                <Toaster />
             </div>
             }
         </div>
