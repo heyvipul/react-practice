@@ -13,7 +13,6 @@ const OtpInput = ({length = 4 ,onOtpSubmit=()=>{}}) => {
         }
     },[])
 
-
     function handleChange(index,e){
         const value = e.target.value;
         if(isNaN(value)) return;
