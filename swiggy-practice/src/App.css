@@ -1,0 +1,16 @@
+body{
+  font-family: sans-serif;
+}
+button{
+  font-size: 18px;
+  gap: 5px;
+  transition: 0.1s;
+}
+button:hover{
+  cursor: pointer;
+  transform: scale(1.03);
+}
+button:active{
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,25 @@
+useEffect(() => {
+        return () => {
+            clearInterval(timerId); // Cleanup function to clear interval on component unmount
+        };
+    }, [timerId]);
+
+    const startTimer = () => {
+        if (!timerId) {
+            const id = setInterval(() => {
+                setCount((prevCount) => prevCount + 1);
+            }, 1000);
+            setTimerId(id);
+        }
+    };
+
+    const stopTimer = () => {
+        clearInterval(timerId);
+        setTimerId(null);
+    };
+
+    const resetTimer = () => {
+        setCount(0);
+        clearInterval(timerId);
+        setTimerId(null);
+    };
