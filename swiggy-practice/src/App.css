@@ -1,7 +1,7 @@
 body{
   font-family: sans-serif;
-}
-button{
+} 
+.timer > button{
   font-size: 18px;
   gap: 5px;
   transition: 0.1s;
@@ -13,4 +13,10 @@ button:hover{
 button:active{
   background-color: black;
   color: white;
+}
+.todos{
+  padding: 10px;
+}
+.todos button{
+  margin-left: 5px;
 }
